@@ -1103,6 +1103,126 @@ export default function HomePage() {
         </div>
       </section>
 
+     
+      {/* Testimonials */}
+      <section className="bg-slate-50 py-14 sm:py-18 lg:py-20">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+          <div className="grid gap-6 text-left lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
+            <div className="max-w-3xl">
+              <span className="inline-flex rounded-full !mb-2 border border-blue-100 bg-white 
+              px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-blue-700 sm:text-sm">
+                Customer Reviews
+              </span>
+
+              <h2 className="mt-4 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl lg:text-5xl">
+                Trusted by Homeowners
+              </h2>
+
+              <p className="mt-4 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
+                Hear from customers who trusted us to identify and solve their
+                leakage, seepage and waterproofing problems.
+              </p>
+            </div>
+
+            <p className="text-sm font-semibold text-slate-500 lg:pb-1">
+              Real experiences. Thoughtful repairs.
+            </p>
+          </div>
+
+          <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <article className="flex h-full flex-col rounded-lg border border-slate-200 border-t-2 border-t-blue-600 bg-white p-6 text-left shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md sm:p-7">
+              <div className="flex items-center gap-1 text-amber-500" role="img" aria-label="5 out of 5 stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+
+              <blockquote className="mt-5 flex-1 text-sm leading-7 text-slate-600 sm:text-base">
+                “We had recurring dampness on our bedroom wall even after several
+                repairs. The inspection helped identify the moisture-affected area
+                and the team recommended the right waterproofing treatment. The
+                entire process was clear and professional.”
+              </blockquote>
+
+              <div className="mt-6 flex items-center gap-3 border-t border-slate-200 pt-5">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-blue-100 text-sm font-bold text-blue-700">
+                  RK
+                </div>
+                <div>
+                  <h3 className="text-sm font-bold text-slate-900">Rajesh Kumar</h3>
+                  <p className="text-xs text-slate-500">Homeowner</p>
+                </div>
+              </div>
+            </article>
+
+            <article className="flex h-full flex-col rounded-lg border border-slate-200 border-t-2 border-t-cyan-500 bg-white p-6 text-left shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md sm:p-7">
+              <div className="flex items-center gap-1 text-amber-500" role="img" aria-label="5 out of 5 stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+
+              <blockquote className="mt-5 flex-1 text-sm leading-7 text-slate-600 sm:text-base">
+                “Our terrace was developing leakage during heavy rain. Instead of
+                simply applying another coating, the team inspected the terrace,
+                checked the affected areas and explained the repair process before
+                starting the waterproofing work.”
+              </blockquote>
+
+              <div className="mt-6 flex items-center gap-3 border-t border-slate-200 pt-5">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-cyan-100 text-sm font-bold text-cyan-700">
+                  PS
+                </div>
+                <div>
+                  <h3 className="text-sm font-bold text-slate-900">Priya Sharma</h3>
+                  <p className="text-xs text-slate-500">Homeowner</p>
+                </div>
+              </div>
+            </article>
+
+            <article className="flex h-full flex-col rounded-lg border border-slate-200 border-t-2 border-t-indigo-500 bg-white p-6 text-left shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md sm:p-7">
+              <div className="flex items-center gap-1 text-amber-500" role="img" aria-label="5 out of 5 stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+
+              <blockquote className="mt-5 flex-1 text-sm leading-7 text-slate-600 sm:text-base">
+                “We noticed seepage around our bathroom and were not sure whether
+                the problem was from the plumbing or waterproofing. The team
+                investigated the area carefully and explained the possible cause
+                before recommending the repair.”
+              </blockquote>
+
+              <div className="mt-6 flex items-center gap-3 border-t border-slate-200 pt-5">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-indigo-100 text-sm font-bold text-indigo-700">
+                  RJ
+                </div>
+                <div>
+                  <h3 className="text-sm font-bold text-slate-900">Rahul Vijay</h3>
+                  <p className="text-xs text-slate-500">Homeowner</p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div className="mt-8 flex flex-col gap-4 border-t border-slate-200 pt-7 text-left sm:flex-row sm:items-center sm:justify-between">
+            <div className="max-w-2xl">
+              <h3 className="text-base font-bold text-slate-900 sm:text-lg">
+                Have a leakage or seepage problem?
+              </h3>
+              <p className="mt-1 text-sm leading-6 text-slate-600">
+                Let us inspect the affected area and help identify the right solution.
+              </p>
+            </div>
+
+            <a
+              href="/contact"
+              className="inline-flex w-fit shrink-0 items-center justify-center rounded-lg bg-blue-700 px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-blue-800"
+            >
+              Book an Inspection
+              <span className="ml-2">→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+
+
       <Footer />
     </>
   );
