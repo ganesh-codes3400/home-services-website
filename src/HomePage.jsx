@@ -3,22 +3,22 @@ import { useNavigate } from 'react-router-dom';
 import NavbarPage from './NavbarPage';
 import Footer from './Footer';
 import { Phone } from 'lucide-react';
-import waterprooffaq from './assets/waterprooffaq.png';
-import houseinteriorandexterior from './assets/thermolmoisutrebanner.png';
+import waterprooffaq from './assets/homepage-waterprooffaq.webp';
+import houseinteriorandexterior from './assets/homepage-thermolmoisutrebanner.webp';
 import housemarblesbanner from './assets/mixallbanner.png';
-import waterproofBanner from './assets/waterproofBanner.png';
-import houseElectricalbanner from './assets/moisturemetertestingbanner.png';
+import waterproofBanner from './assets/homepage-waterproofBanner.webp';
+import houseElectricalbanner from './assets/homepage-moisturemetertestingbanner.webp';
 import dryimage from './assets/dryimage.webp';
 import dryimage1 from './assets/dryimage1.webp';
 import dryimage2 from './assets/dryimage2.webp';
-import terrace1 from './assets/terrace1.png';
-import externalcracks2 from './assets/externalcracks2.png'
-import paintpeeling3 from './assets/paintpeeling3.png'
-import bathroomleakage4 from './assets/bathroomleakage4.png'
-import crackandjoint from './assets/crackandjoint.png'
-import seepagewaterignress6 from './assets/seepagewaterignress6.png'
-import thermolmoisutre1 from './assets/thermolmoisutre1.png'
-import thermolmoisutre4 from './assets/moisture111.png'
+import terrace1 from './assets/homepage-terrace1.webp';
+import externalcracks2 from './assets/homepage-externalcracks2.webp'
+import paintpeeling3 from './assets/homepage-paintpeeling3.webp'
+import bathroomleakage4 from './assets/homepage-bathroomleakage4.webp'
+import crackandjoint from './assets/homepage-crackandjoint.webp'
+import seepagewaterignress6 from './assets/homepage-seepagewaterignress6.webp'
+import thermolmoisutre1 from './assets/homepage-thermolmoisutre1.webp'
+import thermolmoisutre4 from './assets/homepage-moisture111.webp'
 
 import moisturemeter from './assets/111.webp'
 import moisturemetertesting111 from './assets/moisturemetertesting111.webp'
@@ -329,6 +329,8 @@ export default function HomePage() {
                   <img
                     src={slide.url}
                     alt={slide.alt || 'Waterproofing and home improvement project'}
+                    width="1440"
+                    height="960"
                     loading={index === 0 ? 'eager' : 'lazy'}
                     fetchPriority={index === 0 ? 'high' : 'auto'}
                     decoding="async"
@@ -435,8 +437,8 @@ export default function HomePage() {
                   <img
                     src={thermolmoisutre1}
                     alt="Thermal imaging inspection for hidden moisture"
-                    width="900"
-                    height="1100"
+                    width="960"
+                    height="640"
                     loading="lazy"
                     decoding="async"
                     className="aspect-[4/5] w-full object-cover object-center transition-transform duration-500 hover:scale-105"
@@ -447,8 +449,8 @@ export default function HomePage() {
                   <img
                     src={moisturemeter}
                     alt="Moisture meter testing a damp surface"
-                    width="900"
-                    height="1100"
+                    width="960"
+                    height="640"
                     loading="lazy"
                     decoding="async"
                     className="aspect-[4/5] w-full object-cover object-center transition-transform duration-500 hover:scale-105"
@@ -461,8 +463,8 @@ export default function HomePage() {
                   <img
                     src={thermolmoisutre4}
                     alt="Thermal camera detecting moisture in a wall"
-                    width="900"
-                    height="1100"
+                    width="960"
+                    height="640"
                     loading="lazy"
                     decoding="async"
                     className="aspect-[4/5] w-full object-cover object-center transition-transform duration-500 hover:scale-105"
@@ -473,8 +475,8 @@ export default function HomePage() {
                   <img
                     src={moisturemetertesting111}
                     alt="Professional moisture testing during leakage inspection"
-                    width="900"
-                    height="1100"
+                    width="960"
+                    height="640"
                     loading="lazy"
                     decoding="async"
                     className="aspect-[4/5] w-full object-cover object-center transition-transform duration-500 hover:scale-105"
@@ -658,8 +660,8 @@ export default function HomePage() {
                 <img
                   src={terrace1}
                   alt="Terrace and roof waterproofing"
-                  width="1000"
-                  height="625"
+                  width="960"
+                  height="640"
                   loading="lazy"
                   decoding="async"
                   className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
@@ -688,8 +690,8 @@ export default function HomePage() {
                 <img
                   src={externalcracks2}
                   alt="Exterior wall repair and waterproofing"
-                  width="1000"
-                  height="625"
+                  width="960"
+                  height="640"
                   loading="lazy"
                   decoding="async"
                   className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
@@ -718,8 +720,8 @@ export default function HomePage() {
                 <img
                   src={paintpeeling3}
                   alt="Wall repair and peeling paint treatment"
-                  width="1000"
-                  height="625"
+                  width="960"
+                  height="640"
                   loading="lazy"
                   decoding="async"
                   className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
@@ -749,8 +751,8 @@ export default function HomePage() {
                 <img
                   src={bathroomleakage4}
                   alt="Bathroom waterproofing and leakage protection"
-                  width="1000"
-                  height="625"
+                  width="960"
+                  height="640"
                   loading="lazy"
                   decoding="async"
                   className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
@@ -780,8 +782,8 @@ export default function HomePage() {
                 <img
                   src={crackandjoint}
                   alt="Construction and crack repair work"
-                  width="1000"
-                  height="625"
+                  width="960"
+                  height="640"
                   loading="lazy"
                   decoding="async"
                   className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
@@ -811,8 +813,8 @@ export default function HomePage() {
                 <img
                   src={seepagewaterignress6}
                   alt="Modern home protected from water and moisture"
-                  width="1000"
-                  height="625"
+                  width="960"
+                  height="640"
                   loading="lazy"
                   decoding="async"
                   className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
@@ -1066,6 +1068,8 @@ export default function HomePage() {
               <img
                 src={waterprooffaq}
                 alt="Waterproofing specialist answering customer questions"
+                width="1100"
+                height="619"
                 loading="lazy"
                 decoding="async"
                 sizes="(max-width: 1023px) 100vw, 36vw"
