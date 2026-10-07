@@ -285,7 +285,7 @@ export default function ContactPage() {
                         href="tel:+919988776655"
                         className="mt-1 inline-block text-lg text-gray-600 transition-colors hover:text-blue-600"
                       >
-                        +91 9988776655
+                        +91 9666587727
                       </a>
                     </div>
                   </div>
@@ -300,11 +300,11 @@ export default function ContactPage() {
                         Email us
                       </h3>
                       <a
-                        href="mailto:info@waterproofpro.com"
+                        href="mailto:Hydrotechsolution1@gmail.com"
                         className="mt-1 inline-block break-all text-lg text-gray-600 
                         transition-colors hover:text-blue-600"
                       >
-                        info@waterproofpro.com
+                        Hydrotechsolution1@gmail.com
                       </a>
                     </div>
                   </div>
@@ -320,9 +320,7 @@ export default function ContactPage() {
                         Our office
                       </h3>
                       <p className="mt-1 text-lg leading-6 text-gray-600">
-                        123 Business Street,
-                        <br />
-                        Mumbai, India 400001
+                        Near Masjid-e-Gada Baig,<br /> Jana Chaitanya, Rajendranagar,<br /> Hyderabad, Telangana 500030, India
                       </p>
                     </div>
                   </div>

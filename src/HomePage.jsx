@@ -4,30 +4,40 @@ import NavbarPage from './NavbarPage';
 import Footer from './Footer';
 import { Phone } from 'lucide-react';
 import waterprooffaq from './assets/waterprooffaq.png';
-import houseinteriorandexterior from './assets/houseinteriorandexteriorbanner.webp';
-import housemarblesbanner from './assets/housemarblesbanner.webp';
-import waterproofBanner from './assets/waterprroftoproofbanner.webp';
-import houseElectricalbanner from './assets/electricalbanner.webp';
+import houseinteriorandexterior from './assets/thermolmoisutrebanner.png';
+import housemarblesbanner from './assets/mixallbanner.png';
+import waterproofBanner from './assets/waterproofBanner.png';
+import houseElectricalbanner from './assets/moisturemetertestingbanner.png';
 import dryimage from './assets/dryimage.webp';
 import dryimage1 from './assets/dryimage1.webp';
 import dryimage2 from './assets/dryimage2.webp';
+import terrace1 from './assets/terrace1.png';
+import externalcracks2 from './assets/externalcracks2.png'
+import paintpeeling3 from './assets/paintpeeling3.png'
+import bathroomleakage4 from './assets/bathroomleakage4.png'
+import crackandjoint from './assets/crackandjoint.png'
+import seepagewaterignress6 from './assets/seepagewaterignress6.png'
+import thermolmoisutre1 from './assets/thermolmoisutre1.png'
+import thermolmoisutre4 from './assets/moisture111.png'
 
+import moisturemeter from './assets/111.webp'
+import moisturemetertesting111 from './assets/moisturemetertesting111.webp'
 const slides = [
   {
     url: waterproofBanner,
-    alt: 'Waterproofing & Roof Repair',
+    alt: 'Waterproofing solutions for roofs and walls',
   },
   {
     url: houseinteriorandexterior,
-    alt: 'Modern Interior Design',
+    alt: 'Thermal camera inspection for hidden moisture',
   },
   {
     url: houseElectricalbanner,
-    alt: 'Electrical Wiring & Repair',
+    alt: 'Moisture meter testing during a leakage inspection',
   },
   {
     url: housemarblesbanner,
-    alt: 'Tiles & Stone Work',
+    alt: 'Home improvement and repair services',
   },
 ];
 
@@ -144,7 +154,7 @@ const results = [
   },
   {
     image: dryimage1,
-    title: 'Bathroom Seepage Fix',
+    title: 'Rooftop Seepage Fix',
     // location: 'Pune, Maharashtra',
     stat: 'Dampness Eliminated',
   },
@@ -157,8 +167,8 @@ const results = [
 ];
 
 const impactStats = [
-  { value: 10000, suffix: '+', label: 'Happy Customers' },
-  { value: 25000, suffix: '+', label: 'Projects Completed' },
+  { value: 1000, suffix: '+', label: 'Happy Customers' },
+  { value: 2500, suffix: '+', label: 'Projects Completed' },
   { value: 10, suffix: ' yrs', label: 'Warranty Coverage' },
   { value: 4.9, suffix: '/5', decimals: 1, label: 'Customer Rating' },
 ];
@@ -258,84 +268,606 @@ export default function HomePage() {
     <>
       <NavbarPage />
 
-    
-      <section className="relative min-h-[calc(100vh-5rem)] w-full overflow-hidden ">
-        {slides.map((slide, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${index === currentSlide ? 'opacity-100' : 'pointer-events-none opacity-0'}`}
-          >
-            <img
-              src={slide.url}
-              alt={slide.alt}
-              loading={index === 0 ? 'eager' : 'lazy'}
-              fetchPriority={index === 0 ? 'high' : 'auto'}
-              decoding="async"
-              sizes="100vw"
-              className="h-full w-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gray-950/55" />
-          </div>
-        ))}
 
-        <div className="relative z-10 mx-auto flex min-h-[calc(100vh-5rem)] max-w-7xl items-center px-5 py-10 sm:px-8 lg:px-10">
-          <div className="max-w-3xl text-center sm:text-left">
-            <span className="inline-flex rounded-full border border-white/40 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white sm:text-sm">
-              Trusted by 10,000+ homeowners
+      <section className="w-full overflow-hidden bg-slate-50">
+        <div className="mx-auto grid min-h-[calc(100svh-5rem)] max-w-7xl grid-cols-1 items-center gap-8 px-5 py-8 sm:px-8 sm:py-12 lg:grid-cols-2 lg:gap-14 lg:px-10 lg:py-16">
+          <div className="hero-copy order-2 text-left lg:order-1">
+            <span className="inline-flex rounded-full border border-blue-200 bg-white px-4 py-2 text-xs font-bold uppercase tracking-wider text-blue-700 shadow-sm sm:text-sm">
+              Trusted by 1000+ homeowners
             </span>
 
-            <h1 className="mt-5 !text-4xl font-extrabold leading-tight !text-white sm:!text-5xl lg:!text-5xl">
+            <h1 className="mt-5 !text-3xl font-extrabold leading-tight !text-slate-900 sm:!text-4xl lg:!text-5xl">
               Reliable waterproofing for a stronger, safer home.
             </h1>
 
-            <p className="mt-6 max-w-2xl !text-lg font-semibold leading-7 text-white/85 sm:!text-lg">
+            <p className="mt-5 max-w-xl !text-base leading-7 !text-slate-600 sm:!text-lg">
               Protect your home from leaks, seepage, and moisture damage with dependable
               waterproofing solutions built to last.
             </p>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
               <button
                 onClick={() => navigate('/contact')}
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-indigo-700 px-6 py-3.5 text-sm font-semibold text-white shadow-lg transition-colors hover:bg-indigo-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:px-7 sm:text-base"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-700 px-6 py-3.5 text-sm font-semibold text-white shadow-md transition-colors hover:bg-blue-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 sm:px-7 sm:text-base"
               >
                 Book an inspection
-                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </button>
 
               <a
                 href="tel:+919988776655"
-                className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/60 bg-white px-6 py-3.5 text-sm font-semibold text-gray-900 transition-colors hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:px-7 sm:text-base"
+                className="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-300 bg-white px-6 py-3.5 text-sm font-semibold text-slate-800 transition-colors hover:border-blue-500 hover:text-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 sm:px-7 sm:text-base"
               >
                 Call us
               </a>
             </div>
 
-            <div className="mt-4 font-semibold flex flex-wrap justify-center gap-x-5 gap-y-2 text-lg !text-white/80 sm:justify-start">
+            <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold text-slate-700 sm:text-base">
               {['10-year warranty', 'Certified experts', 'Money-back guarantee'].map((item) => (
                 <span key={item} className="flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-indigo-300 " />
+                  <span className="h-2 w-2 rounded-full bg-cyan-500" />
                   {item}
                 </span>
               ))}
             </div>
           </div>
+
+          <div className="hero-carousel order-1 lg:order-2">
+            <div className="relative aspect-[5/4] overflow-hidden rounded-2xl bg-slate-200 shadow-xl sm:aspect-[16/10] lg:aspect-[4/3]">
+              {slides.map((slide, index) => (
+                <div
+                  key={slide.url}
+                  aria-hidden={index !== currentSlide}
+                  className={`absolute inset-0 transition-all duration-700 ease-out ${
+                    index === currentSlide
+                      ? 'translate-x-0 opacity-100'
+                      : 'pointer-events-none translate-x-8 opacity-0'
+                  }`}
+                >
+                  <img
+                    src={slide.url}
+                    alt={slide.alt || 'Waterproofing and home improvement project'}
+                    loading={index === 0 ? 'eager' : 'lazy'}
+                    fetchPriority={index === 0 ? 'high' : 'auto'}
+                    decoding="async"
+                    sizes="(max-width: 1023px) 100vw, 50vw"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+              ))}
+
+              <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 bg-gradient-to-t from-slate-950/70 to-transparent px-5 pb-5 pt-14 sm:px-6 sm:pb-6">
+                <span className="max-w-[75%] text-sm font-semibold text-white sm:text-base">
+                  {slides[currentSlide].alt || 'Practical protection for every part of your property'}
+                </span>
+
+                <div className="flex shrink-0 items-center gap-2" aria-label="Choose carousel image">
+                  {slides.map((slide, index) => (
+                    <button
+                      key={slide.url}
+                      type="button"
+                      onClick={() => goToSlide(index)}
+                      className={`h-2.5 rounded-full transition-all duration-300 ${
+                        index === currentSlide ? 'w-7 bg-white' : 'w-2.5 bg-white/60 hover:bg-white'
+                      }`}
+                      aria-label={`Show image ${index + 1}`}
+                      aria-current={index === currentSlide ? 'true' : undefined}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <span className="absolute bottom-5 right-5 z-20 rounded-md bg-black/45 px-3 py-1.5 text-xs text-white sm:right-8">
-          {slides[currentSlide].alt}
-        </span>
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 lg:px-10 lg:py-20">
+          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+            <div>
+              <span className="inline-flex rounded-full bg-blue-50 px-4 py-2 text-xs font-bold uppercase tracking-wider text-blue-700">
+                Advanced Leakage Detection
+              </span>
 
-        <div className="absolute bottom-5 left-1/2 z-20 flex -translate-x-1/2 gap-2">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`h-2 rounded-full transition-all duration-300 ${index === currentSlide ? 'w-8 bg-white' : 'w-2 bg-white/50 hover:bg-white/80'}`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
+              <h2 className="mt-4 text-3xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
+                Don&apos;t Just Cover the Leak.
+                <span className="mt-1 block text-blue-600">Find the Root Cause.</span>
+              </h2>
+
+              <p className="mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
+                Before starting waterproofing work, Hydrotechsolution first identifies
+                where the moisture is coming from. Our inspection process combines
+                visual assessment, thermal imaging and moisture meter testing to locate
+                affected areas and determine the right repair approach.
+              </p>
+
+              <div className="mt-8 space-y-5">
+                <div className="border-l-4 border-blue-600 pl-5">
+                  <h3 className="text-lg font-bold text-slate-900">Thermal Camera Inspection</h3>
+                  <p className="mt-1 text-sm leading-6 text-slate-600 sm:text-base">
+                    Thermal imaging helps identify unusual temperature patterns that may
+                    indicate hidden moisture behind walls, ceilings and other affected
+                    surfaces.
+                  </p>
+                </div>
+
+                <div className="border-l-4 border-cyan-500 pl-5">
+                  <h3 className="text-lg font-bold text-slate-900">Moisture Meter Testing</h3>
+                  <p className="mt-1 text-sm leading-6 text-slate-600 sm:text-base">
+                    Moisture measurements help confirm suspicious areas and understand the
+                    extent of dampness before repair or waterproofing begins.
+                  </p>
+                </div>
+
+                <div className="border-l-4 border-slate-300 pl-5">
+                  <h3 className="text-lg font-bold text-slate-900">Targeted Repair Planning</h3>
+                  <p className="mt-1 text-sm leading-6 text-slate-600 sm:text-base">
+                    Once the affected area is understood, we can recommend a suitable
+                    waterproofing or repair solution instead of simply covering the visible
+                    symptoms.
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <a
+                  href="/contact"
+                  className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-6 py-3.5 text-sm font-bold text-white transition hover:bg-blue-700"
+                >
+                  Book Leakage Inspection
+                  <span className="ml-2">→</span>
+                </a>
+
+                <a
+                  href="tel:+919666587727"
+                  className="inline-flex items-center justify-center rounded-xl border border-slate-300 bg-white px-6 py-3.5 text-sm font-bold text-slate-800 transition hover:border-blue-500 hover:text-blue-600"
+                >
+                  Call +91 9666587727
+                </a>
+              </div>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div className="space-y-4">
+                <div className="overflow-hidden rounded-[28px] bg-slate-100 ring-1 ring-slate-200">
+                  <img
+                    src={thermolmoisutre1}
+                    alt="Thermal imaging inspection for hidden moisture"
+                    width="900"
+                    height="1100"
+                    loading="lazy"
+                    decoding="async"
+                    className="aspect-[4/5] w-full object-cover object-center transition-transform duration-500 hover:scale-105"
+                  />
+                </div>
+
+                <div className="overflow-hidden rounded-[28px] bg-slate-100 ring-1 ring-slate-200">
+                  <img
+                    src={moisturemeter}
+                    alt="Moisture meter testing a damp surface"
+                    width="900"
+                    height="1100"
+                    loading="lazy"
+                    decoding="async"
+                    className="aspect-[4/5] w-full object-cover object-center transition-transform duration-500 hover:scale-105"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                <div className="overflow-hidden rounded-[28px] bg-slate-100 ring-1 ring-slate-200">
+                  <img
+                    src={thermolmoisutre4}
+                    alt="Thermal camera detecting moisture in a wall"
+                    width="900"
+                    height="1100"
+                    loading="lazy"
+                    decoding="async"
+                    className="aspect-[4/5] w-full object-cover object-center transition-transform duration-500 hover:scale-105"
+                  />
+                </div>
+
+                <div className="overflow-hidden rounded-[28px] bg-slate-100 ring-1 ring-slate-200">
+                  <img
+                    src={moisturemetertesting111}
+                    alt="Professional moisture testing during leakage inspection"
+                    width="900"
+                    height="1100"
+                    loading="lazy"
+                    decoding="async"
+                    className="aspect-[4/5] w-full object-cover object-center transition-transform duration-500 hover:scale-105"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-slate-50">
+        <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-18 lg:px-10 lg:py-20">
+
+          <div className="mx-auto max-w-3xl text-center">
+            <span className="inline-flex rounded-full bg-blue-100 px-4 py-2 text-xs font-bold uppercase tracking-wider text-blue-700">
+              Our Leakage Detection Process
+            </span>
+
+            <h2 className="mt-4 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl">
+              Diagnose First.
+              <span className="block text-blue-600">
+                Waterproof With a Purpose.
+              </span>
+            </h2>
+
+            <p className="mt-4 text-base leading-7 text-slate-600 sm:text-lg">
+              Water can travel away from the point where it first enters a building.
+              Instead of treating only the visible stain, we investigate the affected
+              area and work toward identifying the likely source before recommending
+              the repair.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+
+            {/* 01 */}
+            <article className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+              <div className="flex items-center justify-between">
+                <span className="text-3xl font-black text-blue-100">
+                  01
+                </span>
+
+                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-blue-600 text-sm font-bold text-white">
+                  01
+                </span>
+              </div>
+
+              <h3 className="mt-5 text-xl font-bold text-slate-900">
+                Inspect
+              </h3>
+
+              <p className="mt-3 flex-1 text-sm leading-6 text-slate-600">
+                We inspect visible signs such as damp patches, cracks, peeling
+                paint, stains, seepage and leakage points.
+              </p>
+            </article>
+
+            {/* 02 */}
+            <article className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+              <div className="flex items-center justify-between">
+                <span className="text-3xl font-black text-cyan-100">
+                  02
+                </span>
+
+                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-cyan-500 text-sm font-bold text-white">
+                  02
+                </span>
+              </div>
+
+              <h3 className="mt-5 text-xl font-bold text-slate-900">
+                Detect
+              </h3>
+
+              <p className="mt-3 flex-1 text-sm leading-6 text-slate-600">
+                Thermal imaging helps identify suspicious zones, while moisture
+                testing helps verify areas requiring closer investigation.
+              </p>
+            </article>
+
+            {/* 03 */}
+            <article className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+              <div className="flex items-center justify-between">
+                <span className="text-3xl font-black text-indigo-100">
+                  03
+                </span>
+
+                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-indigo-600 text-sm font-bold text-white">
+                  03
+                </span>
+              </div>
+
+              <h3 className="mt-5 text-xl font-bold text-slate-900">
+                Identify
+              </h3>
+
+              <p className="mt-3 flex-1 text-sm leading-6 text-slate-600">
+                We assess possible entry points and affected areas so the repair
+                approach addresses the underlying problem rather than only the
+                visible symptom.
+              </p>
+            </article>
+
+            {/* 04 */}
+            <article className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+              <div className="flex items-center justify-between">
+                <span className="text-3xl font-black text-sky-100">
+                  04
+                </span>
+
+                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-sky-600 text-sm font-bold text-white">
+                  04
+                </span>
+              </div>
+
+              <h3 className="mt-5 text-xl font-bold text-slate-900">
+                Waterproof
+              </h3>
+
+              <p className="mt-3 flex-1 text-sm leading-6 text-slate-600">
+                Once the problem is understood, we recommend the appropriate
+                waterproofing or repair treatment for the affected area.
+              </p>
+            </article>
+
+          </div>
+
+          {/* Bottom message */}
+          <div className="mt-10 rounded-2xl bg-[#211d57] px-6 py-7 text-center sm:px-10">
+            <h3 className="text-xl font-bold text-white sm:text-2xl">
+              Stop Repeating the Same Repair.
+            </h3>
+
+            <p className="mx-auto mt-2 max-w-5xl text-sm leading-6 text-blue-100 sm:text-base">
+              Find out what is causing the problem before spending money on another
+              temporary patch or coat of waterproofing.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-18 lg:px-10 lg:py-14">
+
+          <div className="grid items-end gap-6 lg:grid-cols-[1fr_auto]">
+            <div className="max-w-3xl">
+              <span className="inline-flex rounded-full bg-blue-50 px-4 py-2 text-xs font-bold uppercase tracking-wider text-blue-700">
+                Waterproofing Solutions
+              </span>
+
+              <h2 className="mt-4 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl lg:text-5xl">
+                From Leakage Detection
+                <span className="block text-blue-600">
+                  To Complete Waterproofing
+                </span>
+              </h2>
+
+              <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-lg">
+                Once the source and affected areas are understood, we provide
+                targeted waterproofing and repair solutions for common residential
+                and building leakage problems.
+              </p>
+            </div>
+
+            <a
+              href="/contact"
+              className="inline-flex w-fit items-center rounded-xl bg-blue-600 px-5 py-3 text-sm font-bold text-white transition hover:bg-blue-700"
+            >
+              Discuss Your Problem
+              <span className="ml-2">→</span>
+            </a>
+          </div>
+
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+
+            {/* Terrace */}
+            <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <div className="aspect-[16/10] overflow-hidden">
+                <img
+                  src={terrace1}
+                  alt="Terrace and roof waterproofing"
+                  width="1000"
+                  height="625"
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+              </div>
+
+              <div className="flex flex-1 flex-col p-6">
+                <span className="text-xs font-bold uppercase tracking-wider text-blue-600">
+                  01
+                </span>
+
+                <h3 className="mt-2 text-xl font-bold text-slate-900">
+                  Terrace & Roof Leakage
+                </h3>
+
+                <p className="mt-3 flex-1 text-sm leading-6 text-slate-600">
+                  Address terrace cracks, water entry, damaged waterproofing layers,
+                  ponding-related problems and leakage affecting rooms below.
+                </p>
+              </div>
+            </article>
+
+            {/* External walls */}
+            <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <div className="aspect-[16/10] overflow-hidden">
+                <img
+                  src={externalcracks2}
+                  alt="Exterior wall repair and waterproofing"
+                  width="1000"
+                  height="625"
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+              </div>
+
+              <div className="flex flex-1 flex-col p-6">
+                <span className="text-xs font-bold uppercase tracking-wider text-cyan-600">
+                  02
+                </span>
+
+                <h3 className="mt-2 text-xl font-bold text-slate-900">
+                  External Cracks & Seepage
+                </h3>
+
+                <p className="mt-3 flex-1 text-sm leading-6 text-slate-600">
+                  Treat external wall cracks, rainwater penetration, damp patches,
+                  open joints and other areas where water can enter from outside.
+                </p>
+              </div>
+            </article>
+
+            {/* Paint peeling */}
+            <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <div className="aspect-[16/10] overflow-hidden">
+                <img
+                  src={paintpeeling3}
+                  alt="Wall repair and peeling paint treatment"
+                  width="1000"
+                  height="625"
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+              </div>
+
+              <div className="flex flex-1 flex-col p-6">
+                <span className="text-xs font-bold uppercase tracking-wider text-indigo-600">
+                  03
+                </span>
+
+                <h3 className="mt-2 text-xl font-bold text-slate-900">
+                  Paint Peeling & Damp Walls
+                </h3>
+
+                <p className="mt-3 flex-1 text-sm leading-6 text-slate-600">
+                  Dampness, bubbling and peeling paint can be symptoms of moisture
+                  entering the wall. We focus on the moisture problem before
+                  finishing repairs.
+                </p>
+              </div>
+            </article>
+
+            {/* Bathroom */}
+            <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <div className="aspect-[16/10] overflow-hidden">
+                <img
+                  src={bathroomleakage4}
+                  alt="Bathroom waterproofing and leakage protection"
+                  width="1000"
+                  height="625"
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+              </div>
+
+              <div className="flex flex-1 flex-col p-6">
+                <span className="text-xs font-bold uppercase tracking-wider text-sky-600">
+                  04
+                </span>
+
+                <h3 className="mt-2 text-xl font-bold text-slate-900">
+                  Bathroom Leakage
+                </h3>
+
+                <p className="mt-3 flex-1 text-sm leading-6 text-slate-600">
+                  Bathroom seepage can involve wet-area surfaces, joints, drains,
+                  concealed plumbing or waterproofing failures. We investigate the
+                  affected area before selecting the treatment.
+                </p>
+              </div>
+            </article>
+
+            {/* Crack treatment */}
+            <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <div className="aspect-[16/10] overflow-hidden">
+                <img
+                  src={crackandjoint}
+                  alt="Construction and crack repair work"
+                  width="1000"
+                  height="625"
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+              </div>
+
+              <div className="flex flex-1 flex-col p-6">
+                <span className="text-xs font-bold uppercase tracking-wider text-blue-600">
+                  05
+                </span>
+
+                <h3 className="mt-2 text-xl font-bold text-slate-900">
+                  Crack & Joint Treatment
+                </h3>
+
+                <p className="mt-3 flex-1 text-sm leading-6 text-slate-600">
+                  Identify and treat vulnerable cracks, joints and penetration points
+                  that can allow water to travel into walls, roofs and other
+                  building surfaces.
+                </p>
+              </div>
+            </article>
+
+            {/* General seepage */}
+            <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <div className="aspect-[16/10] overflow-hidden">
+                <img
+                  src={seepagewaterignress6}
+                  alt="Modern home protected from water and moisture"
+                  width="1000"
+                  height="625"
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+              </div>
+
+              <div className="flex flex-1 flex-col p-6">
+                <span className="text-xs font-bold uppercase tracking-wider text-cyan-600">
+                  06
+                </span>
+
+                <h3 className="mt-2 text-xl font-bold text-slate-900">
+                  Seepage & Water Ingress
+                </h3>
+
+                <p className="mt-3 flex-1 text-sm leading-6 text-slate-600">
+                  From hidden dampness to recurring water ingress, our approach is
+                  built around understanding the affected area and choosing the
+                  appropriate repair solution.
+                </p>
+              </div>
+            </article>
+
+          </div>
+
+          {/* Final CTA */}
+          <div className="mt-12 overflow-hidden rounded-3xl bg-[#211d57]">
+            <div className="grid items-center gap-6 px-6 py-8 sm:px-10 sm:py-10 lg:grid-cols-[1fr_auto] lg:px-12">
+
+              <div>
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-cyan-300">
+                  Have a leakage problem?
+                </p>
+
+                <h3 className="mt-2 text-2xl font-extrabold text-white sm:text-3xl">
+                  Let us find the source before we fix the surface.
+                </h3>
+
+                <p className="mt-3 max-w-4xl text-sm leading-6 text-blue-100 sm:text-base">
+                  Book an inspection to understand the affected area and discuss
+                  the right waterproofing approach for your property.
+                </p>
+              </div>
+
+              <a
+                href="/contact"
+                className="inline-flex items-center justify-center rounded-xl bg-white px-6 py-3.5 text-sm font-bold text-[#211d57] transition hover:bg-blue-50"
+              >
+                Book an Inspection
+                <span className="ml-2">→</span>
+              </a>
+
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -403,13 +935,13 @@ export default function HomePage() {
               Our Work
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight">
-             Real Waterproofing,{' '}
+              Real Waterproofing,{' '}
               <span className="!text-gray-900 bg-clip-text text-transparent">
-               Results
+                Results
               </span>
             </h2>
             <p className="mt-5 text-base sm:text-lg text-gray-600 leading-relaxed">
-             See how we have transformed homes and protected them from leaks, seepage,
+              See how we have transformed homes and protected them from leaks, seepage,
               and moisture damage with our expert waterproofing solutions.
             </p>
           </div>
@@ -492,11 +1024,10 @@ export default function HomePage() {
                 return (
                   <div
                     key={index}
-                    className={`rounded-2xl border transition-colors duration-200 ${
-                      isOpen
+                    className={`rounded-2xl border transition-colors duration-200 ${isOpen
                         ? 'border-indigo-200 bg-indigo-50'
                         : 'border-gray-200 bg-white hover:border-indigo-200'
-                    }`}
+                      }`}
                   >
                     <button
                       onClick={() => setOpenFaq(isOpen ? -1 : index)}
@@ -508,8 +1039,8 @@ export default function HomePage() {
                       </span>
                       <span
                         className={`flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full transition-all duration-300 ${isOpen
-                            ? 'border-indigo-900 bg-indigo-900 text-white rotate-45'
-                            : 'bg-gray-100 text-gray-600'
+                          ? 'border-indigo-900 bg-indigo-900 text-white rotate-45'
+                          : 'bg-gray-100 text-gray-600'
                           }`}
                       >
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -555,7 +1086,7 @@ export default function HomePage() {
                 className="inline-flex items-center justify-center gap-2 rounded-lg bg-white px-6 py-3 font-semibold text-indigo-700 transition-colors hover:bg-indigo-50"
               >
                 <Phone size={18} aria-hidden="true" />
-                Call +91 9988776655
+                Call +91 9666587727
               </a>
               <button
                 onClick={() => navigate('/contact')}

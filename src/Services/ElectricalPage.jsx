@@ -266,7 +266,7 @@ export default function ElectricalPage() {
                 className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-indigo-700 px-5 py-3 text-lg font-semibold text-white transition-colors hover:bg-indigo-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-700"
               >
                 <Phone size={17} aria-hidden="true" />
-                Call +91 9988776655
+                Call +91 9666587727
               </a>
               <a
                 href="/contact"

@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "./assets/logo1.png";
+import logo from "./assets/hydrotechsolutionnav.png";
 
 export default function NavbarPage() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -32,7 +32,7 @@ export default function NavbarPage() {
             <img
               src={logo}
               alt="Logo"
-              className="block h-45 w-45 object-contain"
+              className="block h-20 w-20 object-contain"
             />
           </Link>
 
@@ -102,7 +102,7 @@ export default function NavbarPage() {
               >
                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
               </svg>
-              <span>+91 9988776655</span>
+              <span>+91 9666587727</span>
             </a>
           </div>
 
@@ -173,12 +173,12 @@ export default function NavbarPage() {
               <button
                 type="button"
                 onClick={() => setIsServicesOpen(!isServicesOpen)}
-                className="flex w-full items-center justify-between rounded-lg px-4 py-3 font-medium text-gray-700 hover:bg-gray-50 hover:text-indigo-600"
+                className="relative flex w-full items-center justify-center rounded-lg px-4 py-3 font-medium text-gray-700 hover:bg-gray-50 hover:text-indigo-600"
                 aria-expanded={isServicesOpen}
               >
                 Services
                 <svg
-                  className={`h-5 w-5 transition-transform ${
+                  className={`absolute right-4 h-5 w-5 transition-transform ${
                     isServicesOpen ? "rotate-180" : ""
                   }`}
                   fill="none"
@@ -221,7 +221,7 @@ export default function NavbarPage() {
             {/* Mobile Contact Button */}
             <a
               href="tel:+919988776655"
-              className="mt-3 flex items-center justify-center gap-2 rounded-lg bg-indigo-600 px-5 py-3 font-semibold text-white hover:bg-indigo-700"
+              className="mt-3 flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-5 py-3 font-semibold text-white hover:bg-blue-700"
             >
               <svg
                 className="h-5 w-5"
@@ -230,7 +230,7 @@ export default function NavbarPage() {
               >
                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
               </svg>
-              +91 9988776655
+              +91 9666587727
             </a>
           </div>
         </div>
