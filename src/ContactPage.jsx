@@ -308,7 +308,7 @@ const services = [
                         Call us
                       </h3>
                       <a
-                        href="tel:+919988776655"
+                        href="tel:+91 9666587727"
                         className="mt-1 inline-block text-lg text-gray-600 transition-colors hover:text-blue-600"
                       >
                         +91 9666587727
@@ -365,7 +365,7 @@ const services = [
                 </p>
 
                 <a
-                  href="tel:+919988776655"
+                  href="tel:+91 9666587727"
                   className="mt-4 inline-flex items-center gap-2 text-lgfont-semibold text-blue-600 hover:text-blue-700"
                 >
                   Call our team

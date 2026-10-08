@@ -262,7 +262,7 @@ export default function ElectricalPage() {
                 Our electrician will check your wiring, boards and earthing, then explain what needs to be done.
               </p>
               <a
-                href="tel:+919988776655"
+                href="tel:+91 9666587727"
                 className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-indigo-700 px-5 py-3 text-lg font-semibold text-white transition-colors hover:bg-indigo-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-700"
               >
                 <Phone size={17} aria-hidden="true" />

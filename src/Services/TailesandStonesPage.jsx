@@ -136,7 +136,7 @@ export default function TailesandStonesPage() {
                   Get a free quote <ArrowRight size={17} aria-hidden="true" />
                 </Link>
                 <a
-                  href="tel:+919988776655"
+                  href="tel:+91 9666587727"
                   className="inline-flex items-center justify-center gap-2 rounded-lg border border-indigo-200 bg-white px-6 py-3 text-lg font-semibold text-indigo-700 transition-colors hover:bg-indigo-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-700"
                 >
                   <Phone size={17} aria-hidden="true" /> Call us

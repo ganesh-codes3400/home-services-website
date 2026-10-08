@@ -316,7 +316,7 @@ export default function HomePage() {
               </button>
 
               <a
-                href="tel:+919988776655"
+                href="tel:+91 9666587727"
                 className="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-300 bg-white px-6 py-3.5 text-sm font-semibold text-slate-800 transition-colors hover:border-blue-500 hover:text-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 sm:px-7 sm:text-base"
               >
                 Call us
@@ -1049,7 +1049,7 @@ export default function HomePage() {
             </p>
             <div className="flex flex-col justify-center gap-3 sm:flex-row">
               <a
-                href="tel:+919988776655"
+                href="tel:+91 9666587727"
                 className="inline-flex items-center justify-center gap-2 rounded-lg bg-white px-6 py-3 font-semibold text-indigo-700 transition-colors hover:bg-indigo-50"
               >
                 <Phone size={18} aria-hidden="true" />

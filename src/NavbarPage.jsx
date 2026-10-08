@@ -91,7 +91,7 @@ export default function NavbarPage() {
           {/* Desktop Contact Button */}
           <div className="hidden md:block">
             <a
-              href="tel:+919988776655"
+              href="tel:+91 9666587727"
               className="inline-flex items-center gap-2 rounded-lg !bg-blue-600 
               px-5 py-2.5 font-semibold text-white transition-colors hover:bg-indigo-700"
             >
@@ -220,7 +220,7 @@ export default function NavbarPage() {
 
             {/* Mobile Contact Button */}
             <a
-              href="tel:+919988776655"
+              href="tel:+91 9666587727"
               className="mt-3 flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-5 py-3 font-semibold text-white hover:bg-blue-700"
             >
               <svg
