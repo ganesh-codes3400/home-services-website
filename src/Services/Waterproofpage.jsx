@@ -96,7 +96,7 @@ const sections = [
         title: 'Minimal roof with thermal check',
         image: img('1545324418-cc1a3fa10c00'),
         alt: 'Building with a flat roof',
-        text: 'Older roofs often hide damp long before a stain shows. A thermal imaging inspection reveals wet insulation and hidden moisture, so we repair only what is needed and finish with a neat, minimal surface.',
+        text: 'Older roofs often hide damp long before a stain shows. A verified civil engineer uses thermal imaging to assess the structure and locate hidden moisture, helping us target the repair instead of guessing from surface stains.',
         points: ['Thermal imaging leak detection', 'Repair only the affected areas', 'Clean parapet and drain detailing'],
         proof: 'Targeted repair, full membrane and a written warranty on the finished work.',
       },
@@ -222,7 +222,7 @@ export default function Waterproofpage() {
             <div>
               <h2 className="text-xl font-bold text-slate-900">Not sure which theme suits your roof?</h2>
               <p className="mt-1 text-lg text-slate-600">
-                We’ll inspect the roof, check for hidden moisture and suggest a practical plan.
+                A verified civil engineer will inspect the roof, assess hidden moisture and recommend a practical repair plan.
               </p>
             </div>
             <Link

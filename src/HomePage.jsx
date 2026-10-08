@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import NavbarPage from './NavbarPage';
 import Footer from './Footer';
+import BookingPage from './BookingPage';
 import { Phone } from 'lucide-react';
 import waterprooffaq from './assets/homepage-waterprooffaq.webp';
 import houseinteriorandexterior from './assets/homepage-thermolmoisutrebanner.webp';
@@ -205,10 +206,21 @@ const faqs = [
 export default function HomePage() {
   const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
   const [countedStats, setCountedStats] = useState(impactStats.map(() => 0));
   const [statsVisible, setStatsVisible] = useState(false);
   const statsSectionRef = useRef(null);
+  const bookingPromptTimerRef = useRef(null);
+
+  useEffect(() => {
+    bookingPromptTimerRef.current = setTimeout(() => {
+      bookingPromptTimerRef.current = null;
+      setIsBookingOpen(true);
+    }, 5000);
+
+    return () => clearTimeout(bookingPromptTimerRef.current);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -258,6 +270,11 @@ export default function HomePage() {
   }, [statsVisible]);
 
   const goToSlide = (index) => setCurrentSlide(index);
+  const openBooking = () => {
+    clearTimeout(bookingPromptTimerRef.current);
+    bookingPromptTimerRef.current = null;
+    setIsBookingOpen(true);
+  };
   const serviceRailRef = useRef(null);
 
   // const scrollServices = (direction) => {
@@ -267,6 +284,7 @@ export default function HomePage() {
   return (
     <>
       <NavbarPage />
+      <BookingPage isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
 
 
       <section className="w-full overflow-hidden bg-slate-50">
@@ -282,12 +300,13 @@ export default function HomePage() {
 
             <p className="mt-5 max-w-xl !text-base leading-7 !text-slate-600 sm:!text-lg">
               Protect your home from leaks, seepage, and moisture damage with dependable
-              waterproofing solutions built to last.
+              waterproofing solutions built to last. Leakage and waterproofing site visits
+              are handled by verified civil engineers, not technicians.
             </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
               <button
-                onClick={() => navigate('/contact')}
+                onClick={()=>navigate('/contact')}
                 className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-700 px-6 py-3.5 text-sm font-semibold text-white shadow-md transition-colors hover:bg-blue-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 sm:px-7 sm:text-base"
               >
                 Book an inspection
@@ -305,7 +324,7 @@ export default function HomePage() {
             </div>
 
             <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold text-slate-700 sm:text-base">
-              {['10-year warranty', 'Certified experts', 'Money-back guarantee'].map((item) => (
+              {['10-year warranty', 'Engineer-led leak inspections', 'Money-back guarantee'].map((item) => (
                 <span key={item} className="flex items-center gap-2">
                   <span className="h-2 w-2 rounded-full bg-cyan-500" />
                   {item}
@@ -369,20 +388,21 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 lg:px-10 lg:py-20">
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
             <div>
-              <span className="inline-flex rounded-full bg-blue-50 px-4 py-2 text-xs font-bold uppercase tracking-wider text-blue-700">
+              <span className="inline-flex rounded-full bg-blue-50 px-4 py-2 text-xs 
+              font-bold uppercase tracking-wider text-blue-700 !mb-2">
                 Advanced Leakage Detection
               </span>
 
-              <h2 className="mt-4 text-3xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
+              <h2 className="mt-4 !mb-2 text-3xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
                 Don&apos;t Just Cover the Leak.
                 <span className="mt-1 block text-blue-600">Find the Root Cause.</span>
               </h2>
 
               <p className="mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
-                Before starting waterproofing work, Hydrotechsolution first identifies
-                where the moisture is coming from. Our inspection process combines
-                visual assessment, thermal imaging and moisture meter testing to locate
-                affected areas and determine the right repair approach.
+                Before waterproofing work begins, a verified civil engineer visits the
+                site to assess the structure and investigate where moisture is coming
+                from. The inspection combines visual assessment, thermal imaging and
+                moisture meter testing to identify affected areas and guide the repair.
               </p>
 
               <div className="mt-8 space-y-5">
@@ -414,13 +434,14 @@ export default function HomePage() {
               </div>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <a
-                  href="/contact"
+                <button
+                  type="button"
+                  onClick={openBooking}
                   className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-6 py-3.5 text-sm font-bold text-white transition hover:bg-blue-700"
                 >
                   Book Leakage Inspection
                   <span className="ml-2">→</span>
-                </a>
+                </button>
 
                 <a
                   href="tel:+919666587727"
@@ -489,131 +510,72 @@ export default function HomePage() {
       </section>
 
       <section className="bg-slate-50">
-        <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-18 lg:px-10 lg:py-20">
+        <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-18 lg:px-10 lg:py-14">
 
-          <div className="mx-auto max-w-3xl text-center">
-            <span className="inline-flex rounded-full bg-blue-100 px-4 py-2 text-xs font-bold uppercase tracking-wider text-blue-700">
-              Our Leakage Detection Process
+          <div className="mx-auto max-w-4xl text-center">
+            <span className="inline-flex rounded-full bg-blue-100 px-4 py-2 text-xs 
+            font-bold uppercase tracking-wider text-blue-700 !mb-2">
+              After You Book an Inspection
             </span>
 
             <h2 className="mt-4 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl">
-              Diagnose First.
-              <span className="block text-blue-600">
-                Waterproof With a Purpose.
+              A Clear Plan From Scan
+              <span className="block text-blue-600 !mb-2">
+                To Guaranteed Repair.
               </span>
             </h2>
 
-            <p className="mt-4 text-base leading-7 text-slate-600 sm:text-lg">
-              Water can travel away from the point where it first enters a building.
-              Instead of treating only the visible stain, we investigate the affected
-              area and work toward identifying the likely source before recommending
-              the repair.
+            <p className="mt-2 text-base leading-7 text-slate-600 sm:text-lg">
+              We locate the source before recommending treatment, helping you avoid
+              unnecessary demolition and repeat repair costs.
             </p>
           </div>
 
-          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            {[
+              {
+                title: 'Scan Your Full Home with Infrared Camera',
+                description:
+                  'A verified civil engineer scans your property with an infrared camera to identify temperature variations and hidden moisture that may not be visible to the naked eye.',
+              },
 
-            {/* 01 */}
-            <article className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-              <div className="flex items-center justify-between">
-                <span className="text-3xl font-black text-blue-100">
-                  01
+              {
+                title: 'Detailed Report Within 24 Hours',
+                description:
+                  'Receive the engineer’s findings within 24 hours, including affected areas, likely leakage sources, and recommended next steps.',
+              },
+
+              {
+                title: 'Budget-Friendly Quotation with Guaranteed Work',
+                description:
+                  'Get a clear and budget-friendly quotation based on the actual condition of your property, with transparent work details and applicable workmanship guarantee terms.',
+              },
+              {
+                title: 'Source Treatment Instead of Unnecessary Breaking',
+                description:
+                  'We first identify the likely source of the leakage and recommend targeted treatment, helping you avoid unnecessary breaking, repairs, and the cost of guesswork.',
+              },
+              {
+              title: 'Provide warranty on work upto 10 years',
+              description:
+                'Depending on the treatment selected, eligible waterproofing work can include warranty coverage of up to 10 years, subject to the applicable warranty terms.',
+            },
+            ].map((step, index) => (
+              <article
+                key={step.title}
+                className="flex h-full flex-col rounded-lg border border-slate-200 border-t-2 border-t-blue-600 bg-white p-5 text-left shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md sm:p-6"
+              >
+                <span className="text-sm font-bold text-blue-700">
+                  {String(index + 1).padStart(2, '0')}
                 </span>
-
-                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-blue-600 text-sm font-bold text-white">
-                  01
-                </span>
-              </div>
-
-              <h3 className="mt-5 text-xl font-bold text-slate-900">
-                Inspect
-              </h3>
-
-              <p className="mt-3 flex-1 text-sm leading-6 text-slate-600">
-                We inspect visible signs such as damp patches, cracks, peeling
-                paint, stains, seepage and leakage points.
-              </p>
-            </article>
-
-            {/* 02 */}
-            <article className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-              <div className="flex items-center justify-between">
-                <span className="text-3xl font-black text-cyan-100">
-                  02
-                </span>
-
-                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-cyan-500 text-sm font-bold text-white">
-                  02
-                </span>
-              </div>
-
-              <h3 className="mt-5 text-xl font-bold text-slate-900">
-                Detect
-              </h3>
-
-              <p className="mt-3 flex-1 text-sm leading-6 text-slate-600">
-                Thermal imaging helps identify suspicious zones, while moisture
-                testing helps verify areas requiring closer investigation.
-              </p>
-            </article>
-
-            {/* 03 */}
-            <article className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-              <div className="flex items-center justify-between">
-                <span className="text-3xl font-black text-indigo-100">
-                  03
-                </span>
-
-                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-indigo-600 text-sm font-bold text-white">
-                  03
-                </span>
-              </div>
-
-              <h3 className="mt-5 text-xl font-bold text-slate-900">
-                Identify
-              </h3>
-
-              <p className="mt-3 flex-1 text-sm leading-6 text-slate-600">
-                We assess possible entry points and affected areas so the repair
-                approach addresses the underlying problem rather than only the
-                visible symptom.
-              </p>
-            </article>
-
-            {/* 04 */}
-            <article className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-              <div className="flex items-center justify-between">
-                <span className="text-3xl font-black text-sky-100">
-                  04
-                </span>
-
-                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-sky-600 text-sm font-bold text-white">
-                  04
-                </span>
-              </div>
-
-              <h3 className="mt-5 text-xl font-bold text-slate-900">
-                Waterproof
-              </h3>
-
-              <p className="mt-3 flex-1 text-sm leading-6 text-slate-600">
-                Once the problem is understood, we recommend the appropriate
-                waterproofing or repair treatment for the affected area.
-              </p>
-            </article>
-
-          </div>
-
-          {/* Bottom message */}
-          <div className="mt-10 rounded-2xl bg-[#211d57] px-6 py-7 text-center sm:px-10">
-            <h3 className="text-xl font-bold text-white sm:text-2xl">
-              Stop Repeating the Same Repair.
-            </h3>
-
-            <p className="mx-auto mt-2 max-w-5xl text-sm leading-6 text-blue-100 sm:text-base">
-              Find out what is causing the problem before spending money on another
-              temporary patch or coat of waterproofing.
-            </p>
+                <h3 className="mt-4 text-lg font-bold leading-snug text-slate-900">
+                  {step.title}
+                </h3>
+                <p className="mt-3 flex-1 text-sm leading-6 text-slate-600">
+                  {step.description}
+                </p>
+              </article>
+            ))}
           </div>
 
         </div>
@@ -625,7 +587,7 @@ export default function HomePage() {
 
           <div className="grid items-end gap-6 lg:grid-cols-[1fr_auto]">
             <div className="max-w-3xl">
-              <span className="inline-flex rounded-full bg-blue-50 px-4 py-2 text-xs font-bold uppercase tracking-wider text-blue-700">
+              <span className="inline-flex !mb-2 !rounded-full bg-blue-50 px-4 py-2 text-xs font-bold uppercase tracking-wider text-blue-700">
                 Waterproofing Solutions
               </span>
 
@@ -859,13 +821,14 @@ export default function HomePage() {
                 </p>
               </div>
 
-              <a
-                href="/contact"
+              <button
+                type="button"
+                onClick={()=>navigate('/contact')}
                 className="inline-flex items-center justify-center rounded-xl bg-white px-6 py-3.5 text-sm font-bold text-[#211d57] transition hover:bg-blue-50"
               >
                 Book an Inspection
                 <span className="ml-2">→</span>
-              </a>
+              </button>
 
             </div>
           </div>
@@ -1210,13 +1173,14 @@ export default function HomePage() {
               </p>
             </div>
 
-            <a
-              href="/contact"
+            <button
+              type="button"
+              onClick={()=>navigate('/contact')}
               className="inline-flex w-fit shrink-0 items-center justify-center rounded-lg bg-blue-700 px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-blue-800"
             >
               Book an Inspection
               <span className="ml-2">→</span>
-            </a>
+            </button>
           </div>
         </div>
       </section>

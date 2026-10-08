@@ -7,9 +7,12 @@ import {
   MapPin,
   Phone,
   X,
-  ShieldCheck,
-  ClipboardCheck,
-  Headset,
+  ScanSearch,
+  Home,
+  Building2,
+  Bath,
+  Zap,
+  Gem
 } from "lucide-react";
 import NavbarPage from "./NavbarPage";
 import Footer from "./Footer";
@@ -21,23 +24,44 @@ export default function ContactPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const closeButtonRef = useRef(null);
 
-  const services = [
-    {
-      title: "Waterproofing",
-      description: "Protect your home from leaks, dampness, and water damage.",
-      icon: ShieldCheck,
-    },
-    {
-      title: "Interior Design",
-      description: "Create comfortable and beautiful spaces for your home.",
-      icon: ClipboardCheck,
-    },
-    {
-      title: "Electrical Services",
-      description: "Get reliable electrical solutions for your property.",
-      icon: Headset,
-    },
-  ];
+const services = [
+  {
+    title: "Thermal Inspection",
+    description:
+      "A verified civil engineer assesses the structure and uses thermal imaging and moisture testing to investigate the source of leakage.",
+    icon: ScanSearch,
+  },
+  {
+    title: "Terrace Waterproofing",
+    description:
+      "Protect your terrace from rainwater, seepage, cracks, and recurring leakage problems.",
+    icon: Home,
+  },
+  {
+    title: "External Waterproofing",
+    description:
+      "Prevent external wall seepage, dampness, and water ingress with targeted waterproofing solutions.",
+    icon: Building2,
+  },
+  {
+    title: "Bathroom Waterproofing",
+    description:
+      "Protect bathrooms from hidden leaks, seepage, and moisture damage with reliable waterproofing.",
+    icon: Bath,
+  },
+  {
+    title: "Electrical Works",
+    description:
+      "Reliable electrical installation, repair, and maintenance solutions for your property.",
+    icon: Zap,
+  },
+  {
+    title: "Stone Works",
+    description:
+      "Professional stone installation and finishing solutions for durable and attractive spaces.",
+    icon: Gem,
+  },
+];
 
   useEffect(() => {
     if (!isSubmitted) return;
@@ -79,7 +103,8 @@ export default function ContactPage() {
 
               <p className="mt-4 max-w-xl text-lg leading-7 text-gray-600 sm:text-base font-lg font-semibold">
                 Have a question or planning a project? Get in touch with our
-                team. We're here to help you find the right solution.
+                team. For leakage and waterproofing concerns, site visits are
+                carried out by verified civil engineers, not technicians.
               </p>
             </div>
 
@@ -96,7 +121,7 @@ export default function ContactPage() {
 
                 <div className="border-l-2 border-blue-600 pl-3">
                   <p className="text-2xl font-bold text-gray-900">Free</p>
-                  <p className="mt-1 text-lg leading-5 text-gray-600">Site inspection</p>
+                  <p className="mt-1 text-lg leading-5 text-gray-600">Civil engineer site visit</p>
                 </div>
               </div>
 
@@ -168,7 +193,8 @@ export default function ContactPage() {
 
               <p className="mb-7 mt-2 text-sm leading-6 text-gray-600 font-semibold">
                 Fill out the form below and tell us about your requirements.
-                Fields marked with * are required.
+                Leakage and waterproofing inspections are handled by verified
+                civil engineers. Fields marked with * are required.
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-5">
